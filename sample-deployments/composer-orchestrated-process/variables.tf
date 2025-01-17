@@ -55,6 +55,10 @@ variable "vpc_project_id" {
   description = "name of vpc network"
 }
 
+variable "subnet_name" {
+  type        = string
+}
+
 variable "webui_domains" {
   description = "Custom domain pointing to the WebUI app, DNS configured"
   type        = list(string)

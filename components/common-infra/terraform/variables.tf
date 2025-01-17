@@ -43,6 +43,10 @@ variable "vpc_project_id" {
   type        = string
 }
 
+variable "subnet_name" {
+  type = string
+}
+
 variable "alloy_db_cluster_id" {
   description = "AlloyDB Cluster ID"
   type        = string

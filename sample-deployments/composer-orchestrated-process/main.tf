@@ -32,6 +32,7 @@ module "common_infra" {
   region                            = var.region
   create_vpc_network                = var.create_vpc_network
   vpc_name                          = var.vpc_name
+  subnet_name                       = var.subnet_name
   vpc_project_id                    = var.vpc_project_id
   serverless_connector_subnet       = var.serverless_connector_subnet
   serverless_connector_subnet_range = var.serverless_connector_subnet_range

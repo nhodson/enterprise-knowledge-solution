@@ -31,6 +31,13 @@ data "google_compute_network" "provided_vpc" {
   name  = var.vpc_name
 }
 
+data "google_compute_subnetwork" "provided_subnetwork" {
+  count = var.create_vpc_network ? 0 : 1
+  project = var.vpc_project_id
+  name   = var.subnet_name
+  region = var.region
+}
+
 locals {
   vpc_network_id        = var.create_vpc_network ? module.vpc[0].network_id : data.google_compute_network.provided_vpc[0].id
   vpc_network_self_link = var.create_vpc_network ? module.vpc[0].network_self_link : data.google_compute_network.provided_vpc[0].self_link
